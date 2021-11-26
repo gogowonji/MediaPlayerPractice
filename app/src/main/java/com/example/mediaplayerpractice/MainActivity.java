@@ -17,14 +17,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startResAudio(View v){
-        mp = MediaPlayer.create(this, R.raw.old_pop);
+        mp = MediaPlayer.create(this, R.raw.chill_pop);
         mp.start();
 
     }
 
 
     public void stopResAudio(View v){
-        if(mp!=null){
+        if(mp!=null){ //두 번 눌렀을 때 에러 방지
             mp.stop();
             mp.release();
         }
