@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,8 +19,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startResAudio(View v){
-        mp = MediaPlayer.create(this, R.raw.chill_pop);
-        mp.start();
+        if(mp == null){
+            mp = MediaPlayer.create(this, R.raw.chill_pop);
+            mp.start();
+        }else{
+            Toast.makeText(this, "playing the music...",Toast.LENGTH_SHORT).show();
+            Log.i("info msg", "음악재생중");
+        }
 
     }
 
